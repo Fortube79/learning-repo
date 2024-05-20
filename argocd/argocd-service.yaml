@@ -1,17 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: argocd-svc-np
+  name: argocd-server
   namespace: argocd
 spec:
   type: NodePort
   ports:
   - name: http
     port: 80
+    nodePort: 32106
     protocol: TCP
     targetPort: 8080
   - name: https
     port: 443
+    nodePort: 30325
     protocol: TCP
     targetPort: 8080
   selector:

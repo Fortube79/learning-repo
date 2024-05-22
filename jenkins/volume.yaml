@@ -11,8 +11,8 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path: /home/milio/nfs-serv/jenkins
-    server: 192.168.1.44
+    path: /home/milo/nfs-serv/jenkins
+    server: 192.168.1.62
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

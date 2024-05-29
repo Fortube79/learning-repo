@@ -22,8 +22,8 @@ spec:
           image: jenkins/jenkins:2.452.1
           resources:
             limits:
-              memory: "1Gi"
-              cpu: "1000m"
+              memory: "900Mi"
+              cpu: "800m"
             requests:
               memory: "500Mi"
               cpu: "500m"

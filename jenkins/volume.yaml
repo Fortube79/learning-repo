@@ -25,4 +25,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: ibmc-vpc-file-dp2
+  storageClassName: ibmc-vpc-block-10iops-tier

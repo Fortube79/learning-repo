@@ -48,6 +48,10 @@ spec:
             periodSeconds: 40
             timeoutSeconds: 45
             failureThreshold: 3
+      initContainers:
+        - name: init-permissions
+          image: busybox
+          command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]      
           volumeMounts:
             - name: jenkins-data
               mountPath: "/var/jenkins_home"

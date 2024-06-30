@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  bd_dbname: wordpress
+  bd_user: user_wordpress
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: cm-bd-wordpress
+  namespace: app

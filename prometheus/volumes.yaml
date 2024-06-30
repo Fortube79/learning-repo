@@ -4,7 +4,7 @@ metadata:
   name: prometheus-data-pv
 spec:
   capacity:
-    storage: 4Gi
+    storage: 2Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
@@ -29,4 +29,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 4Gi
+      storage: 2Gi

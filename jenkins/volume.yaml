@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: jenkins-pv-5g
+  name: jenkins-pv-2g
 spec:
   claimRef:
-    name: jenkins-pvc-5g
+    name: jenkins-pvc-2g
     namespace: devops-tools
   capacity:
-    storage: 5Gi
+    storage: 2Gi
   accessModes:
     - ReadWriteMany
   nfs:
@@ -17,12 +17,12 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jenkins-pvc-5g
+  name: jenkins-pvc-2g
   namespace: devops-tools
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 5Gi
-  storageClassName: ibmc-vpc-file-retain-dp2
+      storage: 2Gi
+  storageClassName: nfs

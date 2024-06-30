@@ -4,7 +4,7 @@ metadata:
   name: grafana-pvo
 spec:
   capacity:
-    storage: 5Gi
+    storage: 2Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
@@ -30,5 +30,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 4Gi
+      storage: 2Gi
 ---

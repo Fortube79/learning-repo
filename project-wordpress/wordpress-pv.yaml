@@ -4,7 +4,7 @@ metadata:
   name: wp-pv
 spec:
   capacity:
-    storage: 4Gi
+    storage: 2Gi
   accessModes:
     - ReadWriteMany
   nfs:

@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: app
+  labels:
+    app: wordpress
+    tier: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: mysql
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+        - name: contenedor-mysql
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+              name: mysql-port
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: scr-bd-wordpress
+                  key: bd_rootpassword
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-bd-wordpress
+                  key: bd_user
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: scr-bd-wordpress
+                  key: bd_userpassword
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-bd-wordpress
+                  key: bd_dbname
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql 
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc           

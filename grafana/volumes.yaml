@@ -12,8 +12,8 @@ spec:
   mountOptions:
     - hard
     - nfsvers=4.1
-    - uid=472
-    - gid=472
+    #- uid=472
+    #- gid=472
   nfs:
     path: /home/milo/nfs-serv/grafana
     server: 192.168.1.63

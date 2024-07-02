@@ -20926,10 +20926,10 @@ spec:
     port: 80
     protocol: TCP
     targetPort: 8080
-    nodePort: 32106
+    nodePort: 32107
   - name: https
     port: 443
-    nodePort: 30325
+    nodePort: 30326
     protocol: TCP
     targetPort: 8080
   selector:

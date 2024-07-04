@@ -7,12 +7,12 @@ spec:
     name: jenkins-pvc-2g
     namespace: devops-tools
   capacity:
-    storage: 2Gi
+    storage: 3Gi
   accessModes:
     - ReadWriteMany
   nfs:
-    path: /home/milo/nfs-serv/jenkins
-    server: 192.168.1.63
+    path: /Users/emilio/nfs-serv/jenkins
+    server: 192.168.1.32
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -24,5 +24,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 2Gi
-  storageClassName: nfs
+      storage: 3Gi

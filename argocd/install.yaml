@@ -20919,8 +20919,8 @@ metadata:
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
   name: argocd-server
-  annotations:
-    metallb.universe.tf/address-pool: first-pool
+  #annotations:
+   # metallb.universe.tf/address-pool: first-pool
 spec:
   type: LoadBalancer
   ports:

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prometheus
+  namespace: devops-tools
   labels:
     app: prometheus
 spec:
@@ -17,6 +18,13 @@ spec:
       containers:
         - name: prometheus
           image: prom/prometheus
+          resources:
+            limits:
+              memory: "900Mi"
+              cpu: "1000m"
+            requests:
+              memory: "500Mi"
+              cpu: "500m" 
           args:
           - --config.file=/etc/prometheus/prometheus.yml
           - --storage.tsdb.path=/prometheus

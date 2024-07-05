@@ -14,7 +14,7 @@ spec:
     - nfsvers=4.1
   nfs:
     path: /home/milo/nfs-serv/prometheus
-    server: 192.168.1.63
+    server: 192.168.1.132
 
 ---
 apiVersion: v1

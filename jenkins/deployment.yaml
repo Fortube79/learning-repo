@@ -48,12 +48,6 @@ spec:
             periodSeconds: 40
             timeoutSeconds: 45
             failureThreshold: 3
-      initContainers:
-        - name: permissionsfix
-          image: alpine:latest
-          command: ["/bin/sh", "-c"]
-          args:
-            - chown 1001:1001 /var/jenkins_home;      
           volumeMounts:
             - name: jenkins-data
               mountPath: "/var/jenkins_home"

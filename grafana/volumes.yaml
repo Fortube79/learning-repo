@@ -16,12 +16,13 @@ spec:
     #- gid=472
   nfs:
     path: /home/milo/nfs-serv/grafana
-    server: 192.168.1.63
+    server: 192.168.1.132
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: grafana-pvc
+  namespace: devops-tools
   labels:
     app: grafana
 spec:

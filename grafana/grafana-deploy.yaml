@@ -18,13 +18,6 @@ spec:
       containers:
         - name: grafana
           image: grafana/grafana:latest
-          resources:
-            limits:
-              memory: "700Mi"
-              cpu: "400m"
-            requests:
-              memory: "300Mi"
-              cpu: "500m"
           ports:
           - containerPort: 3000
             name: grafana
